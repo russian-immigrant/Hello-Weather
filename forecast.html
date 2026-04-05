@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Weather — 7-Day</title>
+    <link rel="icon" type="image/png" href="assets/hello-weather.png" />
+    <link rel="apple-touch-icon" href="assets/hello-weather.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <div class="brand">Hello <span>Weather</span></div>
+        <nav class="main-nav" aria-label="Main">
+          <a href="index.html">Current</a>
+          <a href="forecast.html" class="active">7-Day</a>
+          <a href="about.html">About</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="card">
+          <form class="search-row" id="forecast-form" action="#" method="get">
+            <input
+              type="text"
+              id="fc-city"
+              name="q"
+              placeholder="City for forecast"
+              autocomplete="off"
+              aria-label="City name"
+            />
+            <button type="submit" class="btn" id="fc-btn">Load forecast</button>
+          </form>
+          <p id="fc-error" class="msg-error" hidden></p>
+          <p class="place-name" id="fc-place" style="margin-bottom: 1rem"></p>
+          <div class="forecast-list" id="fc-list" aria-live="polite"></div>
+        </div>
+      </main>
+    </div>
+
+    <footer id="site-footer"></footer>
+
+    <script src="js/shar.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/codes.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/forecast-page.js"></script>
+  </body>
+</html>
