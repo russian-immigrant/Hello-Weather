@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Weather — About</title>
+    <link rel="icon" type="image/png" href="assets/hello-weather.png" />
+    <link rel="apple-touch-icon" href="assets/hello-weather.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="page-about">
+    <div class="wrap">
+      <header class="site-header">
+        <div class="brand">Hello <span>Weather</span></div>
+        <nav class="main-nav" aria-label="Main">
+          <a href="index.html">Current</a>
+          <a href="forecast.html">7-Day</a>
+          <a href="about.html" class="active">About</a>
+        </nav>
+      </header>
+
+      <main class="about-main">
+        <div class="card prose about-card">
+          <img
+            class="about-logo"
+            src="assets/hello-weather.png"
+            width="112"
+            height="112"
+            alt="Hello Weather"
+          />
+          <h1 class="about-title">About</h1>
+          <p class="about-lead">
+            <strong>Hello Weather</strong> is a simple static site for current
+            conditions and a seven-day outlook anywhere you search.
+          </p>
+          <p>
+            Forecast and place search use the
+            <a
+              href="https://open-meteo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open-Meteo</a
+            >
+            API. Everything runs in your browser; no API key is required.
+          </p>
+          <h2>How to use</h2>
+          <p>
+            Open <strong>Current</strong> for live temperature, humidity, and
+            wind, or <strong>7-Day</strong> for the extended outlook. Your last
+            city is saved locally in this browser.
+          </p>
+          <h2>Source code</h2>
+          <p id="about-github">
+            The GitHub link is set in <code>js/shar.js</code> so you can change
+            the repository URL in one place.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <footer id="site-footer"></footer>
+
+    <script src="js/shar.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+      (function () {
+        var p = document.getElementById("about-github");
+        var url =
+          (window.SHAR && window.SHAR.githubRepo) ||
+          "https://github.com/russian-immigrant/Hello-Weather";
+        var link = document.createElement("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Open the repository";
+        p.appendChild(document.createTextNode(" "));
+        p.appendChild(link);
+        p.appendChild(document.createTextNode("."));
+      })();
+    </script>
+  </body>
+</html>
