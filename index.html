@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Weather — Current</title>
+    <link rel="icon" type="image/png" href="assets/hello-weather.png" />
+    <link rel="apple-touch-icon" href="assets/hello-weather.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <div class="brand">Hello <span>Weather</span></div>
+        <nav class="main-nav" aria-label="Main">
+          <a href="index.html" class="active">Current</a>
+          <a href="forecast.html">7-Day</a>
+          <a href="about.html">About</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="card">
+          <form class="search-row" id="search-form" action="#" method="get">
+            <input
+              type="text"
+              id="city-input"
+              name="q"
+              placeholder="City (e.g. Moscow, London)"
+              autocomplete="off"
+              aria-label="City name"
+            />
+            <button type="submit" class="btn" id="search-btn">Search</button>
+          </form>
+          <p id="error-msg" class="msg-error" hidden></p>
+
+          <div class="hero-weather" id="weather-root">
+            <div>
+              <div class="temp-big" id="temp-display">
+                —<small>°C</small>
+              </div>
+              <p class="place-name" id="place-display">Enter a city to load weather.</p>
+              <p class="condition" id="condition-display"></p>
+            </div>
+            <div class="stats" id="stats-grid" aria-live="polite">
+              <div class="stat">
+                <label>Feels like</label>
+                <strong id="feels">—</strong>
+              </div>
+              <div class="stat">
+                <label>Humidity</label>
+                <strong id="humidity">—</strong>
+              </div>
+              <div class="stat">
+                <label>Wind</label>
+                <strong id="wind">—</strong>
+              </div>
+              <div class="stat">
+                <label>Wind dir.</label>
+                <strong id="wind-dir">—</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer id="site-footer"></footer>
+
+    <script src="js/shar.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/codes.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
